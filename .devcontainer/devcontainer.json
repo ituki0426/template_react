@@ -1,0 +1,50 @@
+{
+	"name": "DinD",
+	"image": "mcr.microsoft.com/devcontainers/base:bullseye",
+	"features": {
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {},
+		"ghcr.io/devcontainers/features/node:1": { "version": 22 }
+	},
+	"mounts": [
+		"source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh/,target=/home/vscode/.ssh/,type=bind,consistency=cached"
+	],
+	"containerEnv": {
+		"TZ": "Asia/Tokyo"
+	},
+	"postCreateCommand": "docker --version",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"mhutchie.git-graph",
+				"dbaeumer.vscode-eslint",
+				"stylelint.vscode-stylelint",
+				"esbenp.prettier-vscode",
+				"VisualStudioExptTeam.vscodeintellicode",
+				"christian-kohler.path-intellisense",
+				"oderwat.indent-rainbow",
+				"formulahendry.auto-rename-tag",
+				"vscode-icons-team.vscode-icons",
+				"MariusAlchimavicius.json-to-ts",
+				"wix.vscode-import-cost"
+			],
+			"settings": {
+				"editor.formatOnSave": true,
+				"editor.tabSize": 2,
+				"editor.renderWhitespace": "all",
+				"editor.fontSize": 14,
+				"editor.fontFamily": "Consolas",
+				"editor.renderLineHighlight": "all",
+				"editor.rulers": [40, 80, 120],
+				"editor.bracketPairColorization.enabled": true,
+				"files.trimFinalNewlines": true,
+				"files.trimTrailingWhitespace": true,
+				"files.encoding": "utf8",
+				"terminal.integrated.fontFamily": "Consolas",
+				"git.autofetch": true,
+				"workbench.tree.indent": 15,
+				"editor.defaultFormatter": "esbenp.prettier-vscode"
+			}
+		}
+	},
+	"remoteUser": "vscode"
+}
