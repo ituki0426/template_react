@@ -1,16 +1,46 @@
-# React + Vite
+# template_react
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Docker Dev Container を前提にした **React + Vite** の開発用テンプレートです。コンテナ内では **Node.js 22**（`.devcontainer/devcontainer.json` の `node` feature）が利用されます。
 
-Currently, two official plugins are available:
+## 前提
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- [Docker](https://docs.docker.com/get-docker/) が動作していること
+- [Cursor](https://cursor.com/) または VS Code と **Dev Containers** 拡張機能
 
-## React Compiler
+ローカルに Node.js を入れている場合は、コンテナを使わずに同じ手順で開発できます。
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Dev Container で開く
 
-## Expanding the ESLint configuration
+1. このフォルダを Cursor / VS Code で開く
+2. コマンドパレット（`Ctrl+Shift+P` / Mac は `Cmd+Shift+P`）を開く
+3. **Dev Containers: Reopen in Container** を実行する
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+初回はイメージの取得・ビルドに時間がかかることがあります。
+
+## セットアップ
+
+```bash
+npm install
+```
+
+## 開発サーバー
+
+```bash
+npm run dev
+```
+
+ブラウザで表示される URL（既定は `http://localhost:5173`）を開きます。終了するときは、そのターミナルで **Ctrl+C** を押します。
+
+## その他のコマンド
+
+| コマンド | 説明 |
+| -------- | ---- |
+| `npm run build` | 本番用ビルド（`dist/` に出力） |
+| `npm run preview` | ビルド結果のローカルプレビュー |
+| `npm run lint` | ESLint |
+
+## スタック
+
+- React 19
+- Vite 8
+- ESLint 9
